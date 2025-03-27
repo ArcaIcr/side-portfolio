@@ -13,6 +13,7 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex gap-6 items-center">
+          <Link to="/about" className="hover:underline text-blue-600 dark:text-blue-400">About</Link>
           <Link to="/" className="hover:underline text-blue-600 dark:text-blue-400">Contact</Link>
           <Link to="/projects" className="hover:underline text-blue-600 dark:text-blue-400">Projects</Link>
           <DarkModeToggle />
@@ -44,6 +45,13 @@ const Navbar = () => {
             >
               Contact
             </Link>
+            <Link 
+              to="/about" className="hover:underline text-blue-600 dark:text-blue-400"
+              onClick={() => setMenuOpen(false)}
+            >
+              About
+            </Link>
+
             <Link
               to="/projects"
               className="block text-blue-600 dark:text-blue-400"

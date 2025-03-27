@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import ContactForm from './components/ContactForm';
+import About from './pages/About';
 import Projects from './pages/Projects';
 import Navbar from './components/NavBar';
 
@@ -22,6 +23,11 @@ function App() {
       <main className="p-6">
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
+            <Route path="/about" element={
+              <motion.div {...pageTransition}>
+                <About />
+              </motion.div>
+            } />
             <Route path="/" element={
               <motion.div {...pageTransition}>
                 <ContactForm />
