@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import ContactForm from './components/ContactForm';
 import About from './pages/About';
 import Projects from './pages/Projects';
-import Navbar from './components/NavBar';
+import NavBar from './components/Navbar';
 import ProjectDetail from './pages/ProjectDetail';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-950 text-gray-800 dark:text-gray-100 font-sans transition-colors duration-300">
-      <Navbar />
+      <NavBar />
 
       <main>
         <AnimatePresence mode="wait">
