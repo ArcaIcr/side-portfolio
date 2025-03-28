@@ -27,27 +27,26 @@ const ContactForm = () => {
 
   return (
     <div className="relative min-h-screen bg-gray-900 text-white overflow-hidden">
-      {/* Background Image */}
+      {/* Background Image using Tailwind's custom class */}
+      <motion.div
+        className="absolute inset-0 z-0 bg-desert dark:bg-forest bg-cover bg-center opacity-30"
+        initial={{ opacity: 0, scale: 1.05 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.5, ease: 'easeOut' }}
+      >
+        {/* Subtle zoom animation */}
         <motion.div
-          className="absolute inset-0 z-0"
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5, ease: 'easeOut' }}
-        >
-          <motion.img
-            src="/forest-bg.jpg"
-            alt="Contact Background"
-            className="w-full h-full object-cover opacity-30"
-            initial={{ scale: 1 }}
-            animate={{ scale: [1, 1.02, 1] }} // subtle zoom loop
-            transition={{
-              repeat: Infinity,
-              repeatType: 'mirror',
-              duration: 12,
-              ease: 'easeInOut',
-            }}
-          />
-        </motion.div>
+          className="w-full h-full"
+          initial={{ scale: 1 }}
+          animate={{ scale: [1, 1.02, 1] }}
+          transition={{
+            repeat: Infinity,
+            repeatType: 'mirror',
+            duration: 12,
+            ease: 'easeInOut',
+          }}
+        />
+      </motion.div>
 
       {/* Form Container */}
       <div className="relative z-10 flex items-center justify-center min-h-screen px-4">
@@ -60,37 +59,36 @@ const ContactForm = () => {
           <input
             type="text"
             placeholder="Your Name"
-            {...register("name", { required: "Name is required" })}
-            className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900"
+            {...register('name', { required: true })}
+            className="w-full p-2 border rounded"
           />
-          {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
+          {errors.name && (
+            <span className="text-red-500">Name is required</span>
+          )}
 
           <input
             type="email"
             placeholder="Your Email"
-            {...register("email", {
-              required: "Email is required",
-              pattern: {
-                value: /^\S+@\S+$/i,
-                message: "Invalid email address",
-              },
-            })}
-            className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900"
+            {...register('email', { required: true })}
+            className="w-full p-2 border rounded"
           />
-          {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+          {errors.email && (
+            <span className="text-red-500">Email is required</span>
+          )}
 
           <textarea
-            rows="4"
             placeholder="Your Message"
-            {...register("message", { required: "Message is required" })}
-            className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900"
+            {...register('message', { required: true })}
+            className="w-full p-2 border rounded"
           />
-          {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
+          {errors.message && (
+            <span className="text-red-500">Message is required</span>
+          )}
 
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md transition"
+            className="w-full p-2 bg-blue-600 text-white rounded hover:bg-blue-700"
           >
             {isSubmitting ? 'Sending...' : 'Send Message'}
           </button>

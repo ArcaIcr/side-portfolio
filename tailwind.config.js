@@ -1,15 +1,19 @@
-export default {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
-  darkMode: "class", // <- enable class-based dark mode
+  darkMode: "class", // Enable class-based dark mode
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+      backgroundImage: {
+        'forest': "url('/forest-bg.jpg')",
+        'subtle-prism': "url('/subtle-prism.svg')",
+        'parallax': "url('/parallax-bg.svg')",
+        'desert': "url('/desert-bg.jpg')",
       },
     },
   },
   plugins: [],
-};
+}
