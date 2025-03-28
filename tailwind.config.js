@@ -11,6 +11,7 @@ module.exports = {
         'forest': "url('/forest-bg.jpg')",
         'subtle-prism': "url('/subtle-prism.svg')",
         'parallax': "url('/parallax-bg.svg')",
+        'desert': "url('/desert-bg.jpg')",
       },
     },
   },

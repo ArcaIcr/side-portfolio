@@ -29,7 +29,7 @@ const ContactForm = () => {
     <div className="relative min-h-screen bg-gray-900 text-white overflow-hidden">
       {/* Background Image using Tailwind's custom class */}
       <motion.div
-        className="absolute inset-0 z-0 bg-forest bg-cover bg-center opacity-30"
+        className="absolute inset-0 z-0 bg-desert dark:bg-forest bg-cover bg-center opacity-30"
         initial={{ opacity: 0, scale: 1.05 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.5, ease: 'easeOut' }}
