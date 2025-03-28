@@ -10,14 +10,18 @@ import FunSection from '../components/about/FunSection';
 const About = () => {
   return (
     <motion.div
-      className="relative min-h-screen bg-gradient-to-br from-gray-100 to-blue-100 dark:from-gray-900 dark:to-blue-950"
+      className="relative min-h-screen" // Removed gradient for clarity
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.4 }}
     >
-      {/* Parallax Background Layer */}
-      <div className="absolute inset-0 bg-fixed bg-[url('/parallax-bg.svg')] bg-no-repeat bg-center bg-cover opacity-10 z-0"></div>
+      {/* Background Layer: Light mode uses subtle-prism.svg, dark mode uses parallax-bg.svg */}
+      <div
+        className="absolute inset-0 bg-fixed bg-no-repeat bg-center bg-cover z-0 
+                   bg-subtle-prism dark:bg-parallax"
+        // Removed "opacity-10" so the image is fully visible
+      ></div>
 
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[300px,1fr] gap-10 px-6 py-12 max-w-6xl mx-auto">
         {/* Sticky Sidebar */}
